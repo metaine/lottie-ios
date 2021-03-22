@@ -29,10 +29,6 @@ open class LottieView: UIView {
     super.didMoveToWindow()
     animationMovedToWindow()
   }
-  
-  var screenScale: CGFloat {
-    return UIScreen.main.scale
-  }
 
   func commonInit() {
     contentMode = .scaleAspectFit

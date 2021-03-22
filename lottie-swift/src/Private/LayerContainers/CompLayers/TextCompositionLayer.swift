@@ -91,8 +91,6 @@ final class TextCompositionLayer: CompositionLayer {
   override func displayContentsWithFrame(frame: CGFloat, forceUpdates: Bool) {
     guard let textDocument = textDocument else { return }
     
-    textLayer.contentsScale = self.renderScale
-    
     let documentUpdate = textDocument.hasUpdate(frame: frame)
     let animatorUpdate = rootNode?.updateContents(frame, forceLocalUpdate: forceUpdates) ?? false
     guard documentUpdate == true || animatorUpdate == true else { return }
@@ -133,10 +131,5 @@ final class TextCompositionLayer: CompositionLayer {
     textLayer.transform = CATransform3DIdentity
     textLayer.position = text.textFramePosition?.pointValue ?? CGPoint.zero
     textLayer.transform = matrix
-  }
-  
-  override func updateRenderScale() {
-    super.updateRenderScale()
-    textLayer.contentsScale = self.renderScale
   }
 }

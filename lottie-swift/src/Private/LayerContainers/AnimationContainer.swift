@@ -31,13 +31,7 @@ final class AnimationContainer: CALayer {
   func reloadImages() {
     layerImageProvider.reloadImages()
   }
-  
-  var renderScale: CGFloat = 1 {
-    didSet {
-      animationLayers.forEach({ $0.renderScale = renderScale })
-    }
-  }
-  
+
   public var respectAnimationFrameRate: Bool = false
   
   /// Forces the view to update its drawing.

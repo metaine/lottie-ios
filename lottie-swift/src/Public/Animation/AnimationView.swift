@@ -815,7 +815,6 @@ final public class AnimationView: LottieView {
     }
     
     let animationLayer = AnimationContainer(animation: animation, imageProvider: imageProvider, textProvider: textProvider, fontProvider: fontProvider)
-    animationLayer.renderScale = self.screenScale
     viewLayer?.addSublayer(animationLayer)
     self.animationLayer = animationLayer
     reloadImages()

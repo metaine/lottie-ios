@@ -96,9 +96,4 @@ final class PreCompositionLayer: CompositionLayer {
     }
     return ["Time Remap" : remappingNode]
   }
-  
-  override func updateRenderScale() {
-    super.updateRenderScale()
-    animationLayers.forEach( { $0.renderScale = renderScale } )
-  }
 }
