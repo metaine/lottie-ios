@@ -13,6 +13,11 @@ import UIKit
 
 open class LottieView: UIView {
 
+  /// The scale at which to render text layers
+  static var textRenderScale: CGFloat {
+    return UIScreen.main.scale
+  }
+
   var viewLayer: CALayer? {
     return layer
   }

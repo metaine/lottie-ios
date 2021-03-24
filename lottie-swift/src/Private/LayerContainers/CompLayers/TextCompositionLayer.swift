@@ -90,7 +90,9 @@ final class TextCompositionLayer: CompositionLayer {
   
   override func displayContentsWithFrame(frame: CGFloat, forceUpdates: Bool) {
     guard let textDocument = textDocument else { return }
-    
+
+    textLayer.contentsScale = LottieView.textRenderScale
+
     let documentUpdate = textDocument.hasUpdate(frame: frame)
     let animatorUpdate = rootNode?.updateContents(frame, forceLocalUpdate: forceUpdates) ?? false
     guard documentUpdate == true || animatorUpdate == true else { return }

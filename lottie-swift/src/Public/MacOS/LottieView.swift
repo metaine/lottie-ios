@@ -29,6 +29,11 @@ public enum LottieContentMode: Int {
 
 public class LottieView: NSView {
 
+  /// The scale at which to render text layers
+  static var textRenderScale: CGFloat {
+    return NSApp.mainWindow?.backingScaleFactor ?? 1
+  }
+
   var viewLayer: CALayer? {
     return layer
   }
